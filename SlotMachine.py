@@ -3,13 +3,11 @@ import random
 class User:
     def __init__(self, money = 10):
         self.money = money
-        self.stuff = []
         self.name = ''
 
 class Slots:
     def __init__(self, money = 500):
         self.money = money
-        self.stuff = []
         self.symbols1 = ['Lemon', 'Orange', 'Plum', 'Cherry', 'Seven', 'Bell', 'WIN']
         self.symbols2 = ['Lemon', 'Orange', 'Plum', 'Cherry', 'Seven', 'Bell', 'WIN']
         self.symbols3 = ['Lemon', 'Orange', 'Plum', 'Cherry', 'Seven', 'Bell', 'WIN']
@@ -17,7 +15,7 @@ class Slots:
     def slot_time(self):
         self.money += 1
         user1.money -= 1
-        nope_list = ['Oh well.', 'Never mind.', 'How\'s the weather looking?', 'Hm.', '*sings* Luck be a lady toooniiiight...', 'You doing ok?', 'Next time, for sure.']
+        nope_list = ['Oh well.', 'Never mind.', 'How\'s around that weather, huh?', 'Hm.', '*sings* Luck be a lady toooniiiight... *laughs* Not so ladylike right now, huh?', 'You doing ok?', 'Next time, for sure.', 'These messages mean you lost.']
         output_list = []
         output_list.append(random.choice(self.symbols1))
         output_list.append(random.choice(self.symbols2))
@@ -75,6 +73,7 @@ user1 = User()
 user1.name = input('Hey there, what\'s your name? ')
 print('Well hi, {name}!'.format(name = user1.name))
 print('You\'ve got {money} credits right now.'.format(money = user1.money))
+print('Each spin costs 1 credit.')
 
 while True:
     play = input('Wanna play the slots? Type yes if you do. ').lower()
@@ -113,6 +112,6 @@ while True:
         print('Fair enough, come back when you\'re ready.')
         break
 
-print('You have {amount} credits. See you again.'. format(amount = user1.money))
+print('You have {amount} credits. See you again, {name}.'. format(amount = user1.money, name = user1.name))
 
 
